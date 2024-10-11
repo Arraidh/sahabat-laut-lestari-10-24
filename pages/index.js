@@ -74,9 +74,7 @@ export default function Home() {
           ) : (
             filteredData?.map((fish) => (
               <GridItem key={fish.id}>
-                <Link href={`/spesies/${fish.id}`} className="cursor-pointer">
-                  <FishCard data={fish} />
-                </Link>
+                <FishCard data={fish} />
               </GridItem>
             ))
           )}
