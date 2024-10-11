@@ -1,4 +1,5 @@
 import FishCard from "@/components/fish-card";
+import Navbar from "@/components/navbar";
 import SearchInput from "@/components/search-input";
 import fetcher from "@/utils/fetcher";
 import { Button, Grid, GridItem, Spinner } from "@chakra-ui/react";
@@ -56,6 +57,7 @@ export default function Home() {
   return (
     <>
       <div className="flex flex-col items-center mx-auto justify-center container p-12 w-full gap-3">
+        <Navbar />
         <SearchInput />
         <Grid
           templateColumns="repeat(3, minmax(0, 1fr))"
