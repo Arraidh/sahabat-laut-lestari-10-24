@@ -73,22 +73,10 @@ export default function FishCard({ data }) {
               </Heading>
               <Text size={"xs"}>{data?.fishUtilization}</Text>
             </Stack>
-            <Text color="blue.600" fontSize="2xl">
-              $450
-            </Text>
           </Stack>
         </CardBody>
         <Divider />
-        <CardFooter>
-          <ButtonGroup spacing="2">
-            <Button variant="solid" colorScheme="blue">
-              Buy now
-            </Button>
-            <Button variant="ghost" colorScheme="blue">
-              Add to cart
-            </Button>
-          </ButtonGroup>
-        </CardFooter>
+        <CardFooter></CardFooter>
       </Card>
     </>
   );
