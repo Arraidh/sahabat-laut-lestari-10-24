@@ -1,3 +1,4 @@
+import DeleteFishDialog from "@/pages/delete-fish";
 import UpdateFishDialog from "@/pages/update-fish";
 import {
   Button,
@@ -82,6 +83,7 @@ export default function FishCard({ data }) {
         <Divider />
         <CardFooter>
           <UpdateFishDialog FishData={data} />
+          <DeleteFishDialog FishData={data} />
         </CardFooter>
       </Card>
     </>
