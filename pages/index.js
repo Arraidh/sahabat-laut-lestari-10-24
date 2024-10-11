@@ -1,9 +1,10 @@
 import FishCard from "@/components/fish-card";
 import SearchInput from "@/components/search-input";
 import fetcher from "@/utils/fetcher";
-import { Grid, GridItem, Spinner } from "@chakra-ui/react";
+import { Button, Grid, GridItem, Spinner } from "@chakra-ui/react";
 import { createTheme, Pagination, ThemeProvider } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
@@ -66,7 +67,9 @@ export default function Home() {
           ) : (
             filteredData?.map((fish) => (
               <GridItem key={fish.id}>
-                <FishCard data={fish} />
+                <Link href={`/spesies/${fish.id}`} className="cursor-pointer">
+                  <FishCard data={fish} />
+                </Link>
               </GridItem>
             ))
           )}
