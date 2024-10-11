@@ -2,13 +2,14 @@ import FishCard from "@/components/fish-card";
 import Navbar from "@/components/navbar";
 import SearchInput from "@/components/search-input";
 import fetcher from "@/utils/fetcher";
-import { Button, Grid, GridItem, Spinner } from "@chakra-ui/react";
+import { Button, Grid, GridItem, Heading, Spinner } from "@chakra-ui/react";
 import { createTheme, Pagination, ThemeProvider } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
+import AddFishDialog from "./add-fish";
 
 const theme = createTheme({
   components: {
@@ -58,6 +59,10 @@ export default function Home() {
     <>
       <div className="flex flex-col items-center mx-auto justify-center container p-12 w-full gap-3">
         <Navbar />
+        <div className="flex justify-between items-center w-full">
+          <Heading size={"xl"}>Daftar Ikan</Heading>
+          <AddFishDialog />
+        </div>
         <SearchInput />
         <Grid
           templateColumns="repeat(3, minmax(0, 1fr))"

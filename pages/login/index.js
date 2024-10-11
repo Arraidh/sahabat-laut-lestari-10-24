@@ -40,6 +40,8 @@ export default function Login() {
         })
         .then((response) =>
           setTimeout(() => {
+            console.log(response);
+            localStorage.setItem("token", response.data.accessToken);
             router.push("/");
           }, 2000)
         )
