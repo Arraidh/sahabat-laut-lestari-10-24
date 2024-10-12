@@ -10,7 +10,7 @@ export default function SpesiesDetail() {
   const params = useParams();
 
   const { data, error, isLoading } = useSWR(
-    `https://test.api.sahabatlautlestari.com/species/${params?.id}`,
+    `${process.env.NEXT_PUBLIC_API}/species/${params?.id}`,
     fetcher,
     { revalidateOnFocus: true }
   );

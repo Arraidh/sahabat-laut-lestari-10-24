@@ -35,7 +35,7 @@ export default function Login() {
 
     toast.promise(
       axios
-        .post("https://test.api.sahabatlautlestari.com/auth/login", {
+        .post(`${process.env.NEXT_PUBLIC_API}/auth/login`, {
           ...user,
         })
         .then((response) =>
@@ -55,33 +55,6 @@ export default function Login() {
         error: (err) => `${err.toString()}`,
       }
     );
-    // toast.promise(
-    //   axios
-    //     .post(`https://test.api.sahabatlautlestari.com/auth/login`, {
-    //       ...user,
-    //     })
-    //     .then((response) => {
-    //       setError({
-    //         ...error,
-    //         isError: false,
-    //       });
-    //       localStorage.setItem("token");
-    //       //   router.push("/");
-    //     })
-    //     .catch((error) => {
-    //       setError({
-    //         isError: true,
-    //         message: error?.response?.data?.title,
-    //       });
-
-    //       throw error;
-    //     }),
-    //   {
-    //     loading: "Loading",
-    //     success: "Berhasil Login",
-    //     error: "Opps terjadi kesalahan",
-    //   }
-    // );
   };
 
   return (

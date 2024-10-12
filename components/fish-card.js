@@ -35,7 +35,7 @@ export default function FishCard({ data }) {
                   src={data?.imageUrl}
                   alt={data?.indonesianName}
                   borderRadius="lg"
-                  className="aspect-[3/4] w-full md:w-2/4  shrink-0 object-cover"
+                  className="aspect-[3/4] w-full md:w-2/4  shrink-0 object-cover shadow-md"
                 />
               ) : (
                 <DefaultFishImg />

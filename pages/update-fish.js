@@ -43,7 +43,7 @@ export default function UpdateFishDialog({ FishData }) {
     toast.promise(
       axios
         .put(
-          `https://test.api.sahabatlautlestari.com/species/${FishData?.id}`,
+          `${process.env.NEXT_PUBLIC_API}/species/${FishData?.id}`,
           { ...updateFish },
           {
             headers: {

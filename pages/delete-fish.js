@@ -26,14 +26,11 @@ export default function DeleteFishDialog({ FishData }) {
   const HandleSubmit = async () => {
     toast.promise(
       axios
-        .delete(
-          `https://test.api.sahabatlautlestari.com/species/${FishData?.id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${localStorage.getItem("token")}`,
-            },
-          }
-        )
+        .delete(`${process.env.NEXT_PUBLIC_API}/species/${FishData?.id}`, {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        })
         .then((response) => onClose())
         .catch((error) => {
           throw new Error("");

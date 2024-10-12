@@ -46,18 +46,9 @@ export default function Home() {
   const PageNumber = params.get("PageNumber") || 1;
 
   const [page, setPage] = useState(1);
-  // const handleChange = (event, value) => {
-  //   setPage(value);
-  // };
-
-  // const { data, error, isLoading } = useSWR(
-  //   "https://test.api.sahabatlautlestari.com/species/all",
-  //   fetcher,
-  //   { revalidateOnFocus: true }
-  // );
 
   const { data, error, isLoading } = useSWR(
-    `https://test.api.sahabatlautlestari.com/species?PageNumber=${PageNumber}&PageSize=10`,
+    `${process.env.NEXT_PUBLIC_API}/species?PageNumber=${PageNumber}&PageSize=10`,
     fetcher,
     { revalidateOnFocus: true }
   );
@@ -71,7 +62,7 @@ export default function Home() {
   useEffect(() => {
     if (search) {
       axios
-        .get("https://test.api.sahabatlautlestari.com/species/all")
+        .get(`${process.env.NEXT_PUBLIC_API}/species/all`)
         .then((response) => {
           console.log(response);
           const currentFilteredData = response?.data?.filter((fish) =>

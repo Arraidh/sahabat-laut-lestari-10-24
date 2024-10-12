@@ -36,7 +36,7 @@ export default function AddFishDialog() {
     toast.promise(
       axios
         .post(
-          "https://test.api.sahabatlautlestari.com/species",
+          `${process.env.NEXT_PUBLIC_API}/species`,
           { ...fishSpecies },
           {
             headers: {
