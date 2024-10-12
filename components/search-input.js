@@ -15,14 +15,19 @@ export default function SearchInput() {
   //   const search = searchParams.get("search");
 
   const doSearch = useDebouncedCallback((term) => {
-    params.set("search", term);
-
+    if (term) {
+      console.log("Params ada");
+      params.set("search", term);
+    } else {
+      console.log("Params tidak ada");
+      params.delete("search");
+    }
     replace(`${pathname}?${params}`);
   }, 400);
 
   return (
     <>
-      <InputGroup size="md">
+      <InputGroup size="md" bg={"white"} rounded={"md"}>
         <Input
           type="text"
           id="search-fish"
