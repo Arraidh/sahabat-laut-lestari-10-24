@@ -17,8 +17,8 @@ export default function SpesiesDetail() {
 
   return (
     <>
-      <div className="flex flex-col items-center mx-auto justify-center container p-12 w-full gap-3">
-        <Stack gap={1}>
+      <div className="flex flex-col items-center mx-auto justify-center container md:p-12 p-4 w-full gap-3">
+        <Stack gap={1} className="w-full max-w-4xl">
           <Link href={`/`}>
             <Button colorScheme="teal" variant={"ghost"}>
               <ArrowBackIcon />
