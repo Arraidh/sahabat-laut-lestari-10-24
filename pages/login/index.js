@@ -50,8 +50,8 @@ export default function Login() {
           throw new Error(error);
         }),
       {
-        loading: "Loading",
-        success: "Got the data",
+        loading: "Memuat akun",
+        success: "Berhasil login",
         error: (err) => `${err.toString()}`,
       }
     );

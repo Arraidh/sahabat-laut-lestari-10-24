@@ -57,9 +57,9 @@ export default function UpdateFishDialog({ FishData }) {
           throw new Error("");
         }),
       {
-        loading: "Loading",
-        success: "Got the data",
-        error: "Error when fetching",
+        loading: "Mengubah data",
+        success: "Berhasil mengubah",
+        error: "Opps terjadi kesalahan",
       }
     );
   };

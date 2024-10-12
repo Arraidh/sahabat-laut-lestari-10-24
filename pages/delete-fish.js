@@ -39,9 +39,9 @@ export default function DeleteFishDialog({ FishData }) {
           throw new Error("");
         }),
       {
-        loading: "Loading",
-        success: "Got the data",
-        error: "Error when fetching",
+        loading: "Menghapus data ...",
+        success: "Data terhapus",
+        error: "Opps terjadi kesalahan",
       }
     );
   };

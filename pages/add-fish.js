@@ -14,6 +14,7 @@ import {
 import axios from "axios";
 import { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { FaPlusCircle } from "react-icons/fa";
 
 export default function AddFishDialog() {
   const [fishSpecies, setFishSpecies] = useState({
@@ -46,12 +47,12 @@ export default function AddFishDialog() {
         .then((response) => onClose())
         .catch((error) => {
           console.log(error);
-          throw new Error("");
+          throw new Error(error);
         }),
       {
-        loading: "Loading",
-        success: "Got the data",
-        error: "Error when fetching",
+        loading: "Membuat Data",
+        success: "Berhasil menampilkan data",
+        error: "Opps ada yang salah",
       }
     );
   }
@@ -59,8 +60,14 @@ export default function AddFishDialog() {
   return (
     <>
       <Toaster />
-      <Button colorScheme="teal" size="md" onClick={onOpen}>
-        Tambah Data
+      <Button
+        colorScheme="gray"
+        variant={"solid"}
+        size={{ md: "md", base: "sm" }}
+        onClick={onOpen}
+        className="flex items-center gap-2"
+      >
+        <FaPlusCircle /> Tambah
       </Button>
       <AlertDialog
         motionPreset="slideInBottom"
