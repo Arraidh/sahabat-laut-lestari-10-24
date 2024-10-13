@@ -16,10 +16,10 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import useSWR from "swr";
-import AddFishDialog from "./add-fish";
 import { useDebouncedCallback } from "use-debounce";
 import { replace } from "next/router";
 import axios from "axios";
+import AddFishDialog from "@/components/dialogs/add-fish";
 
 const theme = createTheme({
   components: {
